@@ -65,7 +65,7 @@ function runTests(callback) {
     return src(['**/*.test.js'])
         .pipe(mocha())
         .on('error', function() {
-            cb(new Error('Test failed'));
+            callback(new Error('Test failed'));
         })
         .on('end', function() {
             callback();
